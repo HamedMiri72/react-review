@@ -7,17 +7,19 @@ import ShopingFilter from './examples/ShopingFilter'
 import MenuMap from './examples/MenuMap'
 import CardProduct from './examples/CardProduct'
 import FilteringSelectedItems from './examples/FilteringSelectedItems'
+import SearchBar from './searchBar/SearchBar'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div>
-      <FilterExample/>
+      {/* <FilterExample/>
       <ShopingFilter/>
       <MenuMap/>
       <CardProduct/>
-      <FilteringSelectedItems/>
+      <FilteringSelectedItems/> */}
+      <SearchBar/>
     </div>
   )
 }
