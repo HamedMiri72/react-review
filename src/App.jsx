@@ -6,6 +6,7 @@ import FilterExample from './examples/FilterExample'
 import ShopingFilter from './examples/ShopingFilter'
 import MenuMap from './examples/MenuMap'
 import CardProduct from './examples/CardProduct'
+import FilteringSelectedItems from './examples/FilteringSelectedItems'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,7 @@ function App() {
       <ShopingFilter/>
       <MenuMap/>
       <CardProduct/>
+      <FilteringSelectedItems/>
     </div>
   )
 }
