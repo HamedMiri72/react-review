@@ -1,13 +1,15 @@
 
 import Table from "./Table";
 import {Users} from "./user"
-import { useState } from 'react';
+import { use, useEffect, useState } from 'react';
+import axios from "axios"
 
 export default function SearchBar() {
 
     const [search, setSearch] = useState("");
+    const [data, setData] = useState([]);
 
-    const keys = ["first_name", "last_name", "email"];
+    // const keys = ["first_name", "last_name", "email"];
     
     // const filterUsers = Users.filter((user) => user.first_name.toLowerCase().includes(search.toLowerCase()));
 
@@ -16,12 +18,23 @@ export default function SearchBar() {
     //                                 || data.last_name.toLowerCase().includes(search.toLowerCase())
     //                                 || data.email.toLowerCase().includes(search.toLowerCase()));}
 
-   const filterSearch = (data) => {
-    return data.filter((item) => 
-        keys.some((key) => item[key].toLowerCase().includes(search.toLowerCase()))
-    )
-   }
+//    const filterSearch = (data) => {
+//     return data.filter((item) => 
+//         keys.some((key) => item[key].toLowerCase().includes(search.toLowerCase()))
+//     )
+//    }
     
+    useEffect(() => {
+
+        const fetchUsers = async () => {
+            const response = await axios.get("http://localhost:5000");
+            setData(response.data);
+        }
+        fetchUsers();
+
+    }, [])
+
+
   return (
    
    <div className="m-50 flex flex-col justify-center">
@@ -39,7 +52,8 @@ export default function SearchBar() {
         ))}
     </ul> */}
 
-    <Table data={filterSearch(Users)}/>
+    {/* <Table data={filterSearch(Users)}/> */}
+    <Table data = {data}/>
 
    </div>
   )
