@@ -16,7 +16,11 @@ export default function SearchBar() {
     //                                 || data.last_name.toLowerCase().includes(search.toLowerCase())
     //                                 || data.email.toLowerCase().includes(search.toLowerCase()));}
 
-    
+   const filterSearch = (data) => {
+    return data.filter((item) => 
+        keys.some((key) => item[key].toLowerCase().includes(search.toLowerCase()))
+    )
+   }
     
   return (
    
