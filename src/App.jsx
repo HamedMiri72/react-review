@@ -8,6 +8,7 @@ import MenuMap from './examples/MenuMap'
 import CardProduct from './examples/CardProduct'
 import FilteringSelectedItems from './examples/FilteringSelectedItems'
 import SearchBar from './searchBar/SearchBar'
+import Table from './searchBar/Table'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +21,7 @@ function App() {
       <CardProduct/>
       <FilteringSelectedItems/> */}
       <SearchBar/>
+      
     </div>
   )
 }

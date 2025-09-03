@@ -1,7 +1,22 @@
-import React from 'react'
+import React from "react";
 
-export default function Table() {
+export default function Table({ data }) {
   return (
-    <div>Table</div>
-  )
+    <table>
+      <tbody>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Email</th>
+        </tr>
+        {data.map((item) => (
+          <tr key={item.id}>
+            <td>{item.first_name}</td>
+            <td>{item.last_name}</td>
+            <td>{item.email}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
 }
